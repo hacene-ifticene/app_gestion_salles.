@@ -4,17 +4,15 @@
 from Data.dao_salle import DataSalle
 
 from Data.dao_salle import DataSalle
-from models.salle import Salle
 
 dao = DataSalle()
 
 try:
+    code = "S3"
 
-    salle = Salle("S4", "Salle Réseau Modifiée", "Laboratoire", 34)
+    dao.delete_salle(code)
 
-    dao.update_salle(salle)
-
-    print("✅ Modification réussie")
+    print("✅ Suppression réussie")
 
 except Exception as e:
-    print("Erreur :", e)
+    print(" Erreur :", e)
