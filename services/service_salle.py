@@ -7,3 +7,18 @@ class ServiceSalle:
 
     def __init__(self):
         self.dao = DataSalle()
+
+    def ajouter_salle(self, salle):
+
+
+        if not salle.code or not salle.libelle or not salle.type_salle or not salle.capacite:
+            return False, "Données incomplètes"
+
+        if salle.capacite < 1:
+            return False, "Capacité doit être >= 1"
+
+        try:
+            self.dao.insert_salle(salle)
+            return True, "Salle ajoutée avec succès"
+        except Exception as e:
+            return False, str(e)
