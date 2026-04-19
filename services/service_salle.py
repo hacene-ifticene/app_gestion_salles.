@@ -60,3 +60,11 @@ class ServiceSalle:
         except Exception as e:
             print("Erreur :", e)
             return None
+
+    def recuperer_salles(self):
+
+        try:
+            return self.dao.get_salles()
+        except Exception as e:
+            print("Erreur :", e)
+            return []
