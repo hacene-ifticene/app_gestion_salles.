@@ -49,3 +49,14 @@ class ServiceSalle:
             return True, "Salle supprimée avec succès"
         except Exception as e:
             return False, str(e)
+
+    def rechercher_salle(self, code):
+
+        if not code:
+            return None
+
+        try:
+            return self.dao.get_salle(code)
+        except Exception as e:
+            print("Erreur :", e)
+            return None
