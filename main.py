@@ -8,11 +8,14 @@ from Data.dao_salle import DataSalle
 dao = DataSalle()
 
 try:
-    code = "S3"
+    code = "S4"
 
-    dao.delete_salle(code)
+    salle = dao.get_salle(code)
 
-    print("✅ Suppression réussie")
+    if salle:
+        salle.afficher_infos()
+    else:
+        print("Salle introuvable !")
 
 except Exception as e:
-    print(" Erreur :", e)
+    print("Erreur :", e)
