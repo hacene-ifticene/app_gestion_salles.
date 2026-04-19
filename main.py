@@ -1,6 +1,12 @@
-#Étape4: test du modèle Salle dans main
+#etape 5: Implémentation de la couche Data (Accès aux données)
 
-from models.salle import Salle
+from Data.dao_salle import DataSalle
 
-salle=Salle("S2", "Salle Informatique", "Laboratoir", 36)
-salle.afficher_infos()
+dao = DataSalle()
+
+try:
+    connection = dao.get_connection()
+    print("Connexion réussie")
+    connection.close()
+except Exception as e:
+    print("Erreur :", e)
