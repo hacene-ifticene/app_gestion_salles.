@@ -6,15 +6,16 @@ from services.service_salle import ServiceSalle
 service = ServiceSalle()
 
 try:
-    code = "S2"
+    print("=== LISTE DES SALLES ===")
 
-    salle = service.rechercher_salle(code)
+    salles = service.recuperer_salles()
 
-    if salle:
-        print("Salle trouvée ✔")
-        salle.afficher_infos()
+    if salles:
+        for s in salles:
+            s.afficher_infos()
+            print("------------------")
     else:
-        print("Salle introuvable")
+        print("Aucune salle trouvée !")
 
 except Exception as e:
     print("Erreur :", e)
