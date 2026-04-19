@@ -9,11 +9,12 @@ from models.salle import Salle
 dao = DataSalle()
 
 try:
-    salle = Salle("S4", "Salle Réseau", "Laboratoire", 34)
 
-    dao.insert_salle(salle)
+    salle = Salle("S4", "Salle Réseau Modifiée", "Laboratoire", 34)
 
-    print("Insertion réussie")
+    dao.update_salle(salle)
+
+    print("✅ Modification réussie")
 
 except Exception as e:
     print("Erreur :", e)
