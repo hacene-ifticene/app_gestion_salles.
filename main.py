@@ -1,12 +1,19 @@
 #etape 5: Implémentation de la couche Data (Accès aux données)
 
+
 from Data.dao_salle import DataSalle
+
+from Data.dao_salle import DataSalle
+from models.salle import Salle
 
 dao = DataSalle()
 
 try:
-    connection = dao.get_connection()
-    print("Connexion réussie")
-    connection.close()
+    salle = Salle("S4", "Salle Réseau", "Laboratoire", 34)
+
+    dao.insert_salle(salle)
+
+    print("Insertion réussie")
+
 except Exception as e:
     print("Erreur :", e)
