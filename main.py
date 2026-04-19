@@ -1,21 +1,7 @@
-#etape6 Implémentation de la couche Service (Logique métier)
+#Étape 7 : Implémentation de l’interface graphique (GUI)
 
 
-from services.service_salle import ServiceSalle
+from views.view_salle import ViewSalle
 
-service = ServiceSalle()
-
-try:
-    print("=== LISTE DES SALLES ===")
-
-    salles = service.recuperer_salles()
-
-    if salles:
-        for s in salles:
-            s.afficher_infos()
-            print("------------------")
-    else:
-        print("Aucune salle trouvée !")
-
-except Exception as e:
-    print("Erreur :", e)
+app = ViewSalle()
+app.mainloop()
