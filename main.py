@@ -8,14 +8,15 @@ from Data.dao_salle import DataSalle
 dao = DataSalle()
 
 try:
-    code = "S4"
+    salles = dao.get_salles()
 
-    salle = dao.get_salle(code)
-
-    if salle:
-        salle.afficher_infos()
+    if salles:
+        print(" Liste des salles :\n")
+        for s in salles:
+            s.afficher_infos()
+            print("--------------------")
     else:
-        print("Salle introuvable !")
+        print(" Aucune salle trouvée")
 
 except Exception as e:
-    print("Erreur :", e)
+    print(" Erreur :", e)
