@@ -1,4 +1,4 @@
-#Étape 7 : Implémentation de l’interface graphique (GUI)
+#Étape 8 : Affichage de la liste des salles
 
 from views.view_salle import ViewSalle
 
