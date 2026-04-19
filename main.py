@@ -1,22 +1,8 @@
-#etape 5: Implémentation de la couche Data (Accès aux données)
+#etape6 Implémentation de la couche Service (Logique métier)
 
+from services.service_salle import ServiceSalle
 
-from Data.dao_salle import DataSalle
+service = ServiceSalle()
 
-from Data.dao_salle import DataSalle
-
-dao = DataSalle()
-
-try:
-    salles = dao.get_salles()
-
-    if salles:
-        print(" Liste des salles :\n")
-        for s in salles:
-            s.afficher_infos()
-            print("--------------------")
-    else:
-        print(" Aucune salle trouvée")
-
-except Exception as e:
-    print(" Erreur :", e)
+print("ServiceSalle initialisé avec succès")
+print("DAO connecté :", service.dao)
