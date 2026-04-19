@@ -1,0 +1,7 @@
+
+{
+  "host": "localhost",
+  "user": "root",
+  "password": "SuperAdministrateur",
+  "database": "db_salles"
+}
