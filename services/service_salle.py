@@ -38,3 +38,14 @@ class ServiceSalle:
             return True, "Salle modifiée avec succès"
         except Exception as e:
             return False, str(e)
+
+    def supprimer_salle(self, code):
+
+        if not code:
+            return False, "Code invalide"
+
+        try:
+            self.dao.delete_salle(code)
+            return True, "Salle supprimée avec succès"
+        except Exception as e:
+            return False, str(e)
